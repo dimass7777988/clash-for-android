@@ -1,0 +1,17 @@
+proxies:
+- name: TOKISAKI KURUMI -SG
+  type: vmess
+  server: quiz.vidio.com
+  port: 443
+  uuid: 951a63da-22e0-43ba-816e-add7e28638cb
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  servername: sg1.mukuro.biz.id
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: sg1.mukuro.biz.id
+  udp: true
