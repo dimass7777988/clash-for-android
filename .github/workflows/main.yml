@@ -1,17 +1,232 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ''
+bind-address: '*'
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  listen: 0.0.0.0:7874
+  nameserver:
+  - 8.8.8.8
+  - 1.0.0.1
+  - https://dns.google/dns-query
+  fallback:
+  - 1.1.1.1
+  - 8.8.4.4
+  - https://cloudflare-dns.com/dns-query
+  - 112.215.203.254
+  default-nameserver:
+  - 8.8.8.8
+  - 1.1.1.1
+  - 112.215.203.254
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - '*.lan'
+  - '*.localdomain'
+  - '*.example'
+  - '*.invalid'
+  - '*.localhost'
+  - '*.test'
+  - '*.local'
+  - '*.home.arpa'
+  - time.*.com
+  - time.*.gov
+  - time.*.edu.cn
+  - time.*.apple.com
+  - time1.*.com
+  - time2.*.com
+  - time3.*.com
+  - time4.*.com
+  - time5.*.com
+  - time6.*.com
+  - time7.*.com
+  - ntp.*.com
+  - ntp1.*.com
+  - ntp2.*.com
+  - ntp3.*.com
+  - ntp4.*.com
+  - ntp5.*.com
+  - ntp6.*.com
+  - ntp7.*.com
+  - '*.time.edu.cn'
+  - '*.ntp.org.cn'
+  - +.pool.ntp.org
+  - time1.cloud.tencent.com
+  - music.163.com
+  - '*.music.163.com'
+  - '*.126.net'
+  - musicapi.taihe.com
+  - music.taihe.com
+  - songsearch.kugou.com
+  - trackercdn.kugou.com
+  - '*.kuwo.cn'
+  - api-jooxtt.sanook.com
+  - api.joox.com
+  - joox.com
+  - y.qq.com
+  - '*.y.qq.com'
+  - streamoc.music.tc.qq.com
+  - mobileoc.music.tc.qq.com
+  - isure.stream.qqmusic.qq.com
+  - dl.stream.qqmusic.qq.com
+  - aqqmusic.tc.qq.com
+  - amobile.music.tc.qq.com
+  - '*.xiami.com'
+  - '*.music.migu.cn'
+  - music.migu.cn
+  - '*.msftconnecttest.com'
+  - '*.msftncsi.com'
+  - msftconnecttest.com
+  - msftncsi.com
+  - localhost.ptlogin2.qq.com
+  - localhost.sec.qq.com
+  - +.srv.nintendo.net
+  - +.stun.playstation.net
+  - xbox.*.microsoft.com
+  - xnotify.xboxlive.com
+  - +.battlenet.com.cn
+  - +.wotgame.cn
+  - +.wggames.cn
+  - +.wowsgame.cn
+  - +.wargaming.net
+  - proxy.golang.org
+  - stun.*.*
+  - stun.*.*.*
+  - +.stun.*.*
+  - +.stun.*.*.*
+  - +.stun.*.*.*.*
+  - heartbeat.belkin.com
+  - '*.linksys.com'
+  - '*.linksyssmartwifi.com'
+  - '*.router.asus.com'
+  - mesu.apple.com
+  - swscan.apple.com
+  - swquery.apple.com
+  - swdownload.apple.com
+  - swcdn.apple.com
+  - swdist.apple.com
+  - lens.l.google.com
+  - stun.l.google.com
+  - +.nflxvideo.net
+  - '*.square-enix.com'
+  - '*.finalfantasyxiv.com'
+  - '*.ffxiv.com'
+  - '*.mcdn.bilivideo.cn'
+  - +.media.dssott.com
 proxies:
-- name: TOKISAKI KURUMI -SG
+- name: (pribadi) [VMess - ws] TLS âœ…
   type: vmess
   server: quiz.vidio.com
   port: 443
-  uuid: 951a63da-22e0-43ba-816e-add7e28638cb
+  uuid: 83642de0-c49e-4448-8f68-1d1e9999583d
   alterId: 0
   cipher: auto
   tls: true
   skip-cert-verify: true
   network: ws
-  servername: sg1.mukuro.biz.id
+  servername: id.lolicon.biz.id
   ws-opts:
     path: /vmess
     headers:
-      Host: sg1.mukuro.biz.id
+      Host: id.lolicon.biz.id
   udp: true
+- name: 4 ðŸ‡®ðŸ‡© Akamai Connected Cloud WS TLS [nautica]
+  server: quiz.vidio.com
+  port: 443
+  type: trojan
+  password: 1f3c9dc0-5531-4113-ac79-4b8eec5efec9
+  skip-cert-verify: true
+  sni: tokisaki.kurumi.biz.id
+  network: ws
+  ws-opts:
+    path: /172.232.239.151-587
+    headers:
+      Host: tokisaki.kurumi.biz.id
+  udp: true
+- name: (tokisakikurumi) [VMess - ws] TLS âœ…
+  type: vmess
+  server: quiz.vidio.com
+  port: 443
+  uuid: 906aac38-c4ca-4d9d-a2a6-ca2d5f75b880
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  servername: id.lolicon.biz.id
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: id.lolicon.biz.id
+  udp: true
+- name: nwjovtyrbh
+  type: vmess
+  server: quiz.vidio.com
+  port: 443
+  uuid: cf2312c6-e321-4ccc-9c0d-ed66ac4d627a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  servername: idcx2.natanvpn.store
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: idcx2.natanvpn.store
+  udp: true
+proxy-groups:
+- name: Friendly_Teams
+  type: select
+  proxies:
+  - (pribadi) [VMess - ws] TLS âœ…
+  - 4 ðŸ‡®ðŸ‡© Akamai Connected Cloud WS TLS [nautica]
+  - (tokisakikurumi) [VMess - ws] TLS âœ…
+  - nwjovtyrbh
+  - LOAD-BALANCE
+  - BEST-PING
+  - FALLBACK
+  - DIRECT
+- name: LOAD-BALANCE
+  type: load-balance
+  strategy: consistent-hashing
+  url: http://hi.bonds.id/ping
+  interval: 300
+  proxies:
+  - (pribadi) [VMess - ws] TLS âœ…
+  - 4 ðŸ‡®ðŸ‡© Akamai Connected Cloud WS TLS [nautica]
+  - (tokisakikurumi) [VMess - ws] TLS âœ…
+  - nwjovtyrbh
+- name: BEST-PING
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - (pribadi) [VMess - ws] TLS âœ…
+  - 4 ðŸ‡®ðŸ‡© Akamai Connected Cloud WS TLS [nautica]
+  - (tokisakikurumi) [VMess - ws] TLS âœ…
+  - nwjovtyrbh
+- name: FALLBACK
+  type: fallback
+  url: http://hi.bonds.id/ping
+  interval: 300
+  proxies:
+  - (pribadi) [VMess - ws] TLS âœ…
+  - 4 ðŸ‡®ðŸ‡© Akamai Connected Cloud WS TLS [nautica]
+  - (tokisakikurumi) [VMess - ws] TLS âœ…
+  - nwjovtyrbh
+rules:
+- MATCH,Friendly_Teams
